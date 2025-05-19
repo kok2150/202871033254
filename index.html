@@ -16,26 +16,17 @@
       margin: 0;
       font-size: 3em;
       font-weight: bold;
-      gap: 20px;
+      gap: 30px;
     }
   </style>
 </head>
 <body>
   <div>LZS15111 YYYYMMDD</div>
-  <div id="visitor-count">Loading visitor count...</div>
 
-  <script>
-    const key = 'lzs15111'; // 你的唯一标识
-    const countEl = document.getElementById('visitor-count');
-
-    fetch(`https://hitcount.dev/api/counts/${key}`)
-      .then(res => res.json())
-      .then(data => {
-        countEl.textContent = `Visitor count: ${data.count}`;
-      })
-      .catch(() => {
-        countEl.textContent = 'Failed to load visitor count.';
-      });
-  </script>
+  <!-- hitwebcounter Code START -->
+  <a href="https://www.hitwebcounter.com" target="_blank">
+    <img src="https://hitwebcounter.com/counter/counter.php?page=20705081&style=0028&nbdigits=4&type=ip&initCount=0" 
+         title="Counter Widget" alt="Visit counter For Websites" border="0" />
+  </a>
 </body>
 </html>
