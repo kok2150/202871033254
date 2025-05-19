@@ -1,36 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>LZS15111 YYYYMMDD</title>
-  <style>
-    body {
-      background-color: black;
-      color: red;
-      font-family: Arial, sans-serif;
-      display: flex;
-      flex-direction: column;  
-      justify-content: center;   
-      align-items: center;        
-      height: 100vh;
-      margin: 0;
-      font-size: 3em;
-      font-weight: bold;
-    }
-    .counter {
-      margin-top: 20px;
-      font-weight: normal;
-    }
-  </style>
+<meta charset="UTF-8" />
+<title>LZS15111 YYYYMMDD</title>
+<style>
+  body {
+    background-color: black;
+    color: red;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-size: 3em;
+    font-weight: bold;
+  }
+  .counter {
+    margin-top: 20px;
+    font-weight: normal;
+  }
+</style>
 </head>
 <body>
   LZS15111 YYYYMMDD
 
-  <div class="counter">
-    <a href="https://www.hitwebcounter.com" target="_blank" style="color: red;">
-      <img src="https://hitwebcounter.com/counter/counter.php?page=20704988&style=0028&nbdigits=4&type=ip&initCount=0" 
-           title="Visitor Counter" alt="Visitor Counter" border="0" />
-    </a>
+  <div class="counter" id="visitor-count">
+    Loading visitor count...
   </div>
+
+  <script>
+    fetch('https://api.countapi.xyz/hit/your-unique-namespace/your-key')
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById('visitor-count').textContent = '访问人数: ' + data.value;
+      })
+      .catch(() => {
+        document.getElementById('visitor-count').textContent = '无法加载访问人数';
+      });
+  </script>
 </body>
 </html>
