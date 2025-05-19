@@ -22,21 +22,22 @@
             color: #333;
         }
         img {
-            max-width: 40%;
+            max-width: 300px; 
+            max-height: 300px; 
+            width: auto;
             height: auto;
             border: 1px solid #ddd;
             border-radius: 4px;
         }
-        .invisible {
-            opacity: 0;
-            position: absolute;
-            left: -9999px;
+        @media (max-width: 600px) {
+            img {
+                max-width: 80%; 
+            }
         }
     </style>
 </head>
 <body>
     <!-- 19180715 -->
-    
     <div class="text-content">U2FsdGVkX1+l3aNrrAa96pcxAc1oocJ2zSXaifcVphM=</div>
     <img src="AES LZS15111 YYYYMMDD.png" alt="HECKNS STUDIO">
 </body>
