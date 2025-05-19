@@ -38,3 +38,8 @@
         document.getElementById('visitor-count').textContent = '访问人数: ' + data.value;
       })
       .catch(() => {
+        document.getElementById('visitor-count').textContent = '无法加载访问人数';
+      });
+  </script>
+</body>
+</html>
