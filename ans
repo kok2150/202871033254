@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <title>最终答案</title>
+  <style>
+    body {
+      background-color: black;
+      color: red;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-size: 2em;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div>恭喜，你找到了最终答案！</div>
+</body>
+</html>
