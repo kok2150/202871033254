@@ -18,8 +18,9 @@
     font-weight: bold;
   }
   .counter {
-    margin-top: 20px;
+    margin-top: 40px; /* 你可以改这个值调整间距 */
     font-weight: normal;
+    font-size: 1.5em; /* 计数器字体稍微小一点 */
   }
 </style>
 </head>
@@ -37,8 +38,3 @@
         document.getElementById('visitor-count').textContent = '访问人数: ' + data.value;
       })
       .catch(() => {
-        document.getElementById('visitor-count').textContent = '无法加载访问人数';
-      });
-  </script>
-</body>
-</html>
