@@ -1,44 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<title>LZS15111 YYYYMMDD</title>
-<style>
-  body {
-    background-color: black;
-    color: red;
-    font-family: Arial, sans-serif;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    font-size: 3em;
-    font-weight: bold;
-  }
-  .counter {
-    margin-top: 40px; /* 你可以改这个值调整间距 */
-    font-weight: normal;
-    font-size: 1.5em; /* 计数器字体稍微小一点 */
-  }
-</style>
+  <meta charset="UTF-8" />
+  <title>LZS15111 YYYYMMDD</title>
+  <style>
+    body {
+      background-color: black;
+      color: red;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-size: 3em;
+      font-weight: bold;
+      gap: 20px;
+    }
+  </style>
 </head>
 <body>
-  LZS15111 YYYYMMDD
-
-  <div class="counter" id="visitor-count">
-    Loading visitor count...
-  </div>
+  <div>LZS15111 YYYYMMDD</div>
+  <div id="visitor-count">Loading visitor count...</div>
 
   <script>
-    fetch('https://api.countapi.xyz/hit/your-unique-namespace/your-key')
-      .then(response => response.json())
+    const key = 'lzs15111'; // 你的唯一标识，可以换成其他字符串
+    const countEl = document.getElementById('visitor-count');
+
+    fetch(`https://hitcount.dev/api/counts/${key}`)
+      .then(res => res.json())
       .then(data => {
-        document.getElementById('visitor-count').textContent = '访问人数: ' + data.value;
+        countEl.textContent = `Visitor count: ${data.count}`;
       })
       .catch(() => {
-        document.getElementById('visitor-count').textContent = '无法加载访问人数';
+        countEl.textContent = 'Failed to load visitor count.';
       });
   </script>
 </body>
